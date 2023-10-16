@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Counter from './Counter'
-import "./cardstyle.css"
+import "../styles/cardStyles.css"
 
 const Card = (props) => {
   const [cardSelected, setCardSelected] = useState(false)
@@ -21,8 +21,10 @@ const Card = (props) => {
       <p>{props.productDetail.desc}</p>
       <div className={getOverlayState()}>
         <Counter 
-          onIncrement={props}
-          onDecrement={props}  />
+          product = {props.productDetail}
+          onIncrement={props.onQuantityIncreased}
+          onDecrement={props.onQuantityDecreased} 
+          />
       </div>
     </div>
   )

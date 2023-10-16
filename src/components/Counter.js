@@ -1,12 +1,11 @@
-import "./counterstyle.css";
+import "../styles/counterStyles.css"
 
 export default function Counter(props) {
     return (
       <div className="counter">
         Quantity &nbsp;
-        <span className="badge badge-warning">
-          {console.log("ddd: ", props.product.quantity)}
-          "Zero"  
+        <span className={props.product.quantity === 0 ? "badge badge-warning" : "badge badge-primary"}>
+          {props.product.quantity === 0 ? "Zero": props.product.quantity}
         </span>
         &nbsp;
         <button className="btn btn-secondary" onClick={props.onIncrement}>

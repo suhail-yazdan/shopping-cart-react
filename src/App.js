@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Card from "./Card.jsx";
-import Cart from "./Cart.jsx";
+import Card from "./components/Card";
+import Cart from "./components/Cart";
 
 function App() {
   const [displayCart, setDisplayCart] = useState(false);
