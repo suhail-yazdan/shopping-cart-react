@@ -34,7 +34,7 @@ function App() {
     e.stopPropagation();
     let sProducts = [...products];
     const ind = sProducts.indexOf(prod);
-    if(sProducts[ind].quantity >= 0) sProducts[ind].quantity++;
+    if(sProducts[ind].quantity >= 0 && sProducts[ind].quantity < 10 ) sProducts[ind].quantity++;
     setProducts(sProducts)
   }
 
