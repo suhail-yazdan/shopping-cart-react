@@ -4,8 +4,6 @@ import Card from "./components/Card";
 import Cart from "./components/Cart";
 
 function App() {
-  const [displayCart, setDisplayCart] = useState(false);
-  // const [cartProductsQty, setCartProductsQty] = useState(0)
   const [products, setProducts] = useState([
     {
       pid: 1,
@@ -51,11 +49,7 @@ function App() {
     <div>
       <header>
         <div className="grid1200">
-            <Cart 
-              showCart={displayCart} 
-              setShowCart={() => setDisplayCart(!displayCart)}
-              products={products}
-            />
+            <Cart selectedProducts={products} />
         </div>
       </header>
       

@@ -1,19 +1,26 @@
+import { useState } from "react";
 import "../styles/cartStyles.css"
 
 const Cart = (props) => {
+  const [displayCart, setDisplayCart] = useState(false);
+
+  function showCart() {
+    setDisplayCart(!displayCart);
+  }
+
   return (
-    <div className="cart" onClick={props.setShowCart}>
+    <div className="cart" onClick={showCart}>
       <h3> 
         My Cart
         <sup className="totalItems">
-          {props.products.reduce((total, product) => total + product.quantity, 0)}
+          {props.selectedProducts.reduce((total, product) => total + product.quantity, 0)}
         </sup>
       </h3>
 
-      {props.showCart && 
+      {displayCart && 
         <div className="popup">
           <ul>
-            {props.products.map(item =>(                            
+            {props.selectedProducts.map(item =>(                            
               <li key={item.pid}>
                 {item.quantity ? `${item.name}: ${item.quantity}` : ""}
               </li>
